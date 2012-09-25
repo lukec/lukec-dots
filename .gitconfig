@@ -1,0 +1,19 @@
+[user]
+        name = Luke Closs
+        email = me@luk.ec
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = auto
+[core]
+        excludesfile = /Users/lukec/src/st/stconfig/.gitignore
+        pager = less -FXRS
+[alias]
+        co = checkout
+        ci = commit
+        st = status
+        re = reset
+        ls = ls-files --exclude-standard
+        lm = ls-files --exclude-standard -m
+        review = =
