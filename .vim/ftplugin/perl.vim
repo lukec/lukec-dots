@@ -14,6 +14,7 @@ set cpo-=C
 
 setlocal formatoptions+=crq
 setlocal keywordprg=perldoc\ -f
+setlocal equalprg=dotdotdottidy
 
 setlocal comments=:#
 setlocal commentstring=#%s

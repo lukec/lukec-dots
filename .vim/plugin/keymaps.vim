@@ -1,30 +1,21 @@
-imap  
+" No use for Ex mode; use Q for formatting.
+map Q gq
 
+map ` !G perl -MText::Autoformat -eautoformat<CR>))
+map `j <C-W>j<C-w>_
+map `k <C-W>k<C-w>_
+map + <C-^>
+
+imap  
+ 
 " Fix delete
 if &term == "xterm-color"
   set t_kb=
   fixdel
 endif
 
-map \` !G perl -MText::Autoformat -eautoformat<CR>))
-map \8 <C-w>80<bar>
-map \h <C-w>h<C-w><bar>
-map \l <C-w>l<C-w><bar>
-map \j <C-w>j<C-w>_
-map \k <C-w>k<C-w>_
-map \= <C-w>=
-map \- <C-w>_
-map \| <C-w><bar>
-map \+ <C-^>
-
-" Too hi-speed for the rking.
-" map ; :
-
-map \] :wa<Bar><UP><CR>
+map \] :w<UP><CR>
 map \[ :<UP><CR>
-
-map \1 :w<CR>
-map \2 :w<CR>:!perlcheck -Ilib %<CR>
 
 map \\\ :noh<CR>:set nopaste<CR>:set nolist<CR>
 map \q :q!<CR>
@@ -38,7 +29,16 @@ map \\# :s/^# // <CR> :noh <CR>
 map \/ :s,^,// , <CR> :noh <CR>
 map \\/ :s,^// ,, <CR> :noh <CR>
 
+" map \1 :up<CR> " ingy doesn't like this (yet)
+map \1 :w<CR>
+map \2 :up<CR>:!perlcheck -Ilib %<CR>
+map \3 :up<CR>:call RunLastT()<CR>
+map \4 :up<CR>:!prove -ls t<CR>
+map \5 :up<CR>:!run-wiki-tests --fake-content-file %<CR>
+map \6 :up<CR>:!make all install<CR>
+
 map \d :.!echo -n 'date:    '; date<CR>
+map \h :up<CR>:call TryPerlCompile()<CR>
 
 " Like ^] (tag lookup), but only in this file.  Sort of.  It looks for
 " 'sub <cword>'.
