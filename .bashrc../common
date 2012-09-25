@@ -1,6 +1,7 @@
 export LANG="en_US.UTF-8"
 export EDITOR=vim
 export PAGER=less
+source ~/perl5/perlbrew/etc/bashrc
 
 path-prepend ./bin
 
