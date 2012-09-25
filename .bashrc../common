@@ -1,5 +1,4 @@
 export LANG="en_US.UTF-8"
-export PERL_BADLANG="0"
 export EDITOR=vim
 export PAGER=less
 
@@ -10,7 +9,6 @@ umask 022
 if [ -n "$TTY" ]; then
     stty -ixon # get rid of ^S and ^Q
 fi
-ulimit -c unlimited # 'core' files
 d=`which dircolors` && [ -x "$d" ] && eval `dircolors`
 
 alias profile='source ~/.bashrc'
